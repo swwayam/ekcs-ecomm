@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card-header.component.css']
 })
 export class CardHeaderComponent {
-  @Input() title !: string
-  @Input() ratings !: number[]
-  @Input() price !: number
+  title : string = "This is my first book"
+  ratings : number[] = [1,1,1,1,1]
+  price : number = 342
 }

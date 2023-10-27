@@ -52,3 +52,14 @@
         --> Once we get value in our smart components using input and output we send them in dumb components.
 
     -- Always follow type safety meaning where ever required you need to have interfaces ready. Mandatory to use the data types and return type
+
+
+
+** Smart Component (product/card) JS **
+    - service.addToCart()
+    - service.changeQunatity()
+
+*** HTML 
+    div 
+        <dumb></dumb>
+    

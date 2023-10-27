@@ -6,8 +6,6 @@ import { Product } from '../product';
 })
 export class ProductService {
 
-  cartPrice : number = 0
-
   private productDB: Product[] = [
     {
       id: 1,
@@ -279,53 +277,5 @@ export class ProductService {
 
   constructor() {}
 
-  getProductData(): Product[] {
-    return this.productDB;
-  }
-
-  getCartData(): Product[] {
-    // this is a local variable, that will temporary store cart items
-    let cartItems: Product[] = [];
-    // we use a for loop to go over the main data and push the elements inside the cartitems that have isInCart property to true.
-    for (const product of this.productDB) {
-      if (product.isInCart) {
-        cartItems.push(product);
-      }
-    }
-
-    return cartItems;
-  }
-
-  addToCart(id: number): void {
-    for (const product of this.productDB) {
-      if (product.id == id) {
-        product.isInCart = true;
-      }
-    }
-  }
-
-  removeFromCart(id: number): void {
-    for (const product of this.productDB) {
-      if (product.id == id) {
-        product.isInCart = false;
-      }
-    }
-  }
-
-  calculateTotal() : void {
-    let totalPrice : number = 0
-    let cartItems : Product[] = this.getCartData()
-    
-    for(const product of cartItems){
-      if(product.purchaseQuantity > 1){
-        totalPrice += product.purchaseQuantity * product.price
-      }else{
-        totalPrice += product.price
-      }
-    }
-
-    this.cartPrice = totalPrice
-  }
-  
 
 }

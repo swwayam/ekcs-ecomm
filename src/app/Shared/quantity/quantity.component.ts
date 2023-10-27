@@ -6,8 +6,18 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './quantity.component.html',
-  styleUrls: ['./quantity.component.css']
+  styleUrls: ['./quantity.component.css'],
 })
 export class QuantityComponent {
-  
+  qunatity: number = 0;
+
+  add(): void {
+    this.qunatity += 1;
+  }
+
+  sub(): void {
+    if (this.qunatity > 0) {
+      this.qunatity -= 1;
+    }
+  }
 }

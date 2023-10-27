@@ -5,7 +5,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { CardHeaderComponent } from './card/card-header/card-header.component';
 import { CardMainComponent } from './card/card-main/card-main.component';
 import { CardFooterComponent } from './card/card-footer/card-footer.component';
-
+import { ButtonComponent } from '../Shared/button/button.component';
 
 
 @NgModule({
@@ -17,7 +17,10 @@ import { CardFooterComponent } from './card/card-footer/card-footer.component';
     CardFooterComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    ButtonComponent
+  ],
+  exports:[ProductsListComponent]
+  
 })
 export class ProductModule { }

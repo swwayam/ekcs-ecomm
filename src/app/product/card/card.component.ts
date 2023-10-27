@@ -8,11 +8,6 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() product !: Product
 
-  constructor(private productService : ProductService){}
-
-  addToCart() : void {
-    this.productService.addToCart(this.product.id)
-  }
+ 
 }
