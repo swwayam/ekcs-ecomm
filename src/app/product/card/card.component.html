@@ -1,8 +1,8 @@
 <div class="card">
-    <app-card-header></app-card-header>
-    <app-card-main></app-card-main>
+    <app-card-header  [title]="product.title" [price]="product.price" [ratings]="product.rating"></app-card-header>
+    <app-card-main [imageUrl]="product.image"></app-card-main>
 
-    <app-card-footer></app-card-footer>
+    <app-card-footer [availableQuantity]="product.availableQuantity" [purchaseQuantity]="product.purchaseQuantity" (cartProduct)="pushToCart()"></app-card-footer>
 
 
 

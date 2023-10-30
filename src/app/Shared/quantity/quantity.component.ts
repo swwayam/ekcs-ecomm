@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,15 +9,20 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./quantity.component.css'],
 })
 export class QuantityComponent {
-  qunatity: number = 0;
+
+  @Input() availableQuantity !: number
+  @Input() purchaseQuantity !: number 
 
   add(): void {
-    this.qunatity += 1;
+    if(this.purchaseQuantity < this.availableQuantity){
+      this.purchaseQuantity += 1;
+    }
+  
   }
 
   sub(): void {
-    if (this.qunatity > 0) {
-      this.qunatity -= 1;
+    if (this.purchaseQuantity > 1) {
+      this.purchaseQuantity -= 1;
     }
   }
 }

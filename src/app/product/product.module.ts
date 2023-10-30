@@ -6,6 +6,7 @@ import { CardHeaderComponent } from './card/card-header/card-header.component';
 import { CardMainComponent } from './card/card-main/card-main.component';
 import { CardFooterComponent } from './card/card-footer/card-footer.component';
 import { ButtonComponent } from '../Shared/button/button.component';
+import { QuantityComponent } from '../Shared/quantity/quantity.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ButtonComponent } from '../Shared/button/button.component';
   ],
   imports: [
     CommonModule,
-    ButtonComponent
+    ButtonComponent,
+    QuantityComponent
   ],
   exports:[ProductsListComponent]
   
