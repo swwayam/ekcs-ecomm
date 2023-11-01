@@ -1,16 +1,14 @@
 import { Injectable, signal } from '@angular/core';
 import { Product } from '../product';
-import {BehaviorSubject } from 'rxjs'
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-
   // cartCount = signal<number>(0)
 
-  cartCount = new BehaviorSubject<number>(0)
-
+  cartCount = new BehaviorSubject<number>(0);
 
   #productDB: Product[] = [
     {
@@ -213,20 +211,18 @@ export class ProductService {
       purchaseQuantity: 1,
       isInCart: false,
     },
-
   ];
 
   constructor() {}
 
-  getData() : Product[]{
-    debugger
-    return this.#productDB
+  getData(): Product[] {
+    //debugger;
+    return this.#productDB;
   }
 
-  addToCart(id: number){
-
+  addToCart(id: number) {
     // Behaviour subject
-    this.cartCount.next(1)
+    this.cartCount.next(1);
 
     // signals
 
@@ -236,14 +232,23 @@ export class ProductService {
     //   return previousValue++
     // })
 
-    this.cartCount
     for (const product of this.#productDB) {
-      if(product.id == id){
-        product.isInCart = true
+      if (product.id == id) {
+        product.isInCart = true;
         break;
       }
     }
   }
 
-
+  getCartData(): Product[] {
+    let cartData: Product[] = [];
+    for (let product of this.#productDB) {
+      if (product.isInCart == true) {
+        cartData.push(product);
+      }
+    }
+    console.log(cartData);
+    return cartData;
+  }
+  changeQty() {}
 }
