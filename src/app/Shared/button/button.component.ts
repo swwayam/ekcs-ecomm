@@ -6,15 +6,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css']
+  styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent {
+  @Input() name!: string;
 
-  @Input() name !: string
+  @Output() btnClick = new EventEmitter();
 
-  @Output() btnClick = new EventEmitter()
-
-  btnClicked() : void{
-    this.btnClick.emit()
+  btnClicked(): void {
+    this.btnClick.emit();
   }
 }
